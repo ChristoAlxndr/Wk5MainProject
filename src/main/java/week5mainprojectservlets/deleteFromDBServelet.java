@@ -11,16 +11,16 @@ import com.week5mainproject.DAO;
 import com.week5mainproject.Trucks;
 
 /**
- * Servlet implementation class updateDBServelet
+ * Servlet implementation class deleteFromDB
  */
-@WebServlet("/updateDBServelet")
-public class updateDBServelet extends HttpServlet {
+@WebServlet("/deleteFromDBServelet")
+public class deleteFromDBServelet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public updateDBServelet() {
+    public deleteFromDBServelet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -38,15 +38,8 @@ public class updateDBServelet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		Trucks updateDB1 = new Trucks();
-		
-		updateDB1.setTruckID(Integer.parseInt(request.getParameter("truck_id")));
-		updateDB1.setDriver(request.getParameter("driver"));
-		updateDB1.setTruckMake(request.getParameter("truck_make"));
-		updateDB1.setTruckModel(request.getParameter("truck_model"));
-		updateDB1.setTruckFuel(Double.parseDouble(request.getParameter("truck_fuel")));
-		
-		DAO.updateDB(updateDB1);
+		System.out.println(request.getParameter("truck_id").toString());
+		DAO.deleteFromDB(Integer.parseInt(request.getParameter("truck_id")));
 		
 		request.getRequestDispatcher("databaseHome.jsp").forward(request, response);
 		
