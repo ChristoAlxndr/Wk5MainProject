@@ -49,8 +49,8 @@
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li><a href="addToDB.html">Add to Database</a></li>
-					<li><a href="#">Update Database</a></li>
-					<li><a href="#">Delete from Database</a></li>
+					<li><a href="updateDB.html">Update Database</a></li>
+					<li><a href="deleteFromDB.html">Delete from Database</a></li>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
@@ -72,26 +72,20 @@
 			<div class="item active">
 				<!-- Set the first background image using inline CSS below. -->
 				<div class="fill"
-					style="background-image: url('C:\Users\admin\workspace\MavenWorkspaces\Week5MainProject\src\main\webapp\Truck1.png');"></div>
-				<div class="carousel-caption">
-					<h2>Caption 1</h2>
-				</div>
+					style="background-image: url('http://blog.rmi.org/Content/Images/blog_2015_03_18-1.jpg');"></div>
+				<div class="carousel-caption"></div>
 			</div>
 			<div class="item">
 				<!-- Set the second background image using inline CSS below. -->
 				<div class="fill"
-					style="background-image: url('http://placehold.it/1900x1080&amp;text=Slide Two');"></div>
-				<div class="carousel-caption">
-					<h2>Caption 2</h2>
-				</div>
+					style="background-image: url('http://www.maizisandmiller.com/wp-content/uploads/diesel-truck-trailer-mechanics-technicians-jobs-hiring.jpg');"></div>
+				<div class="carousel-caption"></div>
 			</div>
 			<div class="item">
 				<!-- Set the third background image using inline CSS below. -->
 				<div class="fill"
-					style="background-image: url('http://placehold.it/1900x1080&amp;text=Slide Three');"></div>
-				<div class="carousel-caption">
-					<h2>Caption 3</h2>
-				</div>
+					style="background-image: url('http://norfolk.legalexaminer.com/wp-content/uploads/sites/97/2013/11/photo-tractor-trailer-accidents.jpg');"></div>
+				<div class="carousel-caption"></div>
 			</div>
 		</div>
 

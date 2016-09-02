@@ -212,8 +212,6 @@ public class DAO {
 			PREP_STMT = CONN.prepareStatement(delFromTable);
 			PREP_STMT.setInt(1, truckID);
 			
-			System.out.println(PREP_STMT.toString());
-			
 			PREP_STMT.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
