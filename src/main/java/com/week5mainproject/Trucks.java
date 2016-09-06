@@ -8,14 +8,14 @@ public class Trucks {
 	private String truckModel = null;
 	private double truckFuel = 0.0d;
 	
-//	public Trucks(int truckID, String driver, String truckMake, String truckModel, double truckFuel) {
-//		super();
-//		this.truckID = truckID;
-//		this.driver = driver;
-//		this.truckMake = truckMake;
-//		this.truckModel = truckModel;
-//		this.truckFuel = truckFuel;
-//	}
+	public Trucks(int truckID, String driver, String truckMake, String truckModel, double truckFuel) {
+		super();
+		this.truckID = truckID;
+		this.driver = driver;
+		this.truckMake = truckMake;
+		this.truckModel = truckModel;
+		this.truckFuel = truckFuel;
+	}
 	
 
 	public Trucks() {

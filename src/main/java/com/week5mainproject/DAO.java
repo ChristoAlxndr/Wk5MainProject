@@ -24,11 +24,7 @@ public class DAO {
 		try {
 			Class.forName(JDBC_DRIVER);
 			
-//			System.out.println("Trying to connect to the database...");
-			
 			CONN = DriverManager.getConnection(DB_URL, USER, Password);
-			
-//			System.out.println("Connected to the database!");
 			
 		} catch (SQLException | ClassNotFoundException e) {
 			System.out.println("Connection failed! YOU LOSE!");
@@ -59,10 +55,6 @@ public class DAO {
 				xanderLot.add(trucksInDB);
 			}
 			
-		for (Trucks trucks : xanderLot) {
-//			System.out.println(trucks);
-		}
-			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -86,8 +78,6 @@ public class DAO {
 			PREP_STMT.setString(3, truckToAdd.getTruckModel());
 			PREP_STMT.setDouble(4, truckToAdd.getTruckFuel());
 			
-//			System.out.println(PREP_STMT);
-			
 			PREP_STMT.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -101,44 +91,9 @@ public class DAO {
 			+ "(?, ?, ?, ?)";
 	
 	
-	private static Trucks aboutTheTrucks() {
-		
-		Scanner scan = new Scanner(System.in);
-		
-		Trucks trucksToAdd = new Trucks();
-		
-		System.out.println("What is the driver's name?");
-		trucksToAdd.setDriver(scan.nextLine());
-		
-		System.out.println("What is the make of the truck?");
-		trucksToAdd.setTruckMake(scan.nextLine());
-		
-		System.out.println("What is the model of the truck?");
-		trucksToAdd.setTruckModel(scan.nextLine());
-		
-		System.out.println("What is the fuel reading of the truck?");
-		trucksToAdd.setTruckFuel(scan.nextDouble());
-		
-		scan.close();
-		return trucksToAdd;
-	}
-	
-	
 	public static void updateDB (Trucks trucksToUpdate) {
 		
 		connToDB();
-		
-		//Scanner scan = new Scanner(System.in);
-		
-		//Trucks trucksToUpdate = new Trucks();
-		
-//		readFromDB();
-		
-//		System.out.println("\n\n");
-//		System.out.println("Which truck would you like to update? \n"
-//				+ "Please enter a truck ID #");
-		
-//		int id = scan.nextInt();
 		
 		try {
 			PREP_STMT = CONN.prepareStatement(updateTheDb);
@@ -155,57 +110,15 @@ public class DAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-//		readFromDB();
 	}
 	
 	public static String updateTheDb = "UPDATE `trucklot`.`xandertrucklot` SET truck_id=?, driver=?,"
 	+ "truck_make=?, truck_model=?, truck_fuel=? WHERE truck_id=?";
 	
-//	public static String updateDB (int id) {
-//		
-//		aboutTheTruckUpdate();
-//		
-//		return "UPDATE `trucklot`.`xandertrucklot` SET truck_id=?, driver=?,"
-//				+ "truck_make=?, truck_model=?, truck_fuel=? WHERE truck_id=?";
-//	}
-	
-	
-	public static Trucks aboutTheTruckUpdate() {
-		
-		Scanner scan = new Scanner(System.in);
-		
-		Trucks trucksToUpdate = new Trucks();
-		
-//		System.out.println("What is the driver's name?");
-		trucksToUpdate.setDriver(scan.nextLine());
-		
-//		System.out.println("What is the make of the truck?");
-		trucksToUpdate.setTruckMake(scan.nextLine());
-		
-//		System.out.println("What is the model of the truck?");
-		trucksToUpdate.setTruckModel(scan.nextLine());
-		
-//		System.out.println("What is the fuel reading of the truck?");
-		trucksToUpdate.setTruckFuel(scan.nextDouble());
-		
-		scan.close();
-		return trucksToUpdate;
-	}
-	
 	
 	public static void deleteFromDB (int truckID) {
 		
 		connToDB();
-		
-//		Scanner scan = new Scanner(System.in);
-		
-//		readFromDB();
-		
-//		System.out.println("\n\n");
-//		System.out.println("Which truck would you like to delete? \n"
-//				+ "Please enter the truck's ID #.");
-		
-//		int id = scan.nextInt();
 		
 		try {
 			
@@ -216,7 +129,6 @@ public class DAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-//		scan.close();
 	} // End deleteFromDB Method
 	
 	public static String delFromTable = "DELETE FROM `trucklot`.`xandertrucklot` WHERE truck_id=?";
